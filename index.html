@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Weather application">
+    <meta name="author" content="Weather">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Weather Comparison App</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/carousel/">
+
+    <!-- Bootstrap core CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link href="css/bootstrap.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+      <link rel ="shortcout icon" href="images/Clouds.png" type = "image/png">
+
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/e0c7dda93e.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body><link rel="stylesheet" href="css/styles.css">
+            <header>
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top" style ="background-color: #bfbfbf">
+            <a class="navbar-brand" href="#">Weather Comparison App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </nav>
+        </header>
+
+        <main role="main">
+
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                    <img src="images/Weather.jpg">
+                    <rect width="100%" height="100%" fill="#FFCCCC"/></svg>
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1 style = "font-family: sans-serif: color : black; ">Your Weather Checker</h1>
+                    <p>See below to compare the weather of any cities of your choosing!</p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
+
+        <div style ="text-align: center">
+
+         <h1>Enter Your Cities</h1>
+      <section id="weather-input">
+         <div>
+            <label for="city1">City 1:</label>
+            <input type="text" id="city1">
+            <span class="error-msg hidden" id="error-value-city1">Enter a city</span>
+         </div>
+         <div>
+            <label for="city2">City 2:</label>
+            <input type="text" id="city2">
+            <span class="error-msg hidden" id="error-value-city2">Enter a city</span>
+         </div>
+         <div>
+            <button id="compareBtn">Compare!</button>
+         </div>
+      </section>
+      <section id="forecast" class="hidden">
+         <h2>This is the 5 Day Forecast</h2>
+
+         <p id="loading-city1">Loading...</p>
+         <p id="error-loading-city1" class="error-msg"></p>
+         <table id="results-city1" style="display: inline-block">
+
+
+             <tr >
+                 <td colspan="5" id="city1-name" class="tableName"></td>
+             </tr>
+            <tr>
+               <td id="city1-day1-name"></td>
+               <td id="city1-day2-name"></td>
+               <td id="city1-day3-name"></td>
+               <td id="city1-day4-name"></td>
+               <td id="city1-day5-name"></td>
+            </tr>
+            <tr>
+               <td id="city1-day1-high"></td>
+               <td id="city1-day2-high"></td>
+               <td id="city1-day3-high"></td>
+               <td id="city1-day4-high"></td>
+               <td id="city1-day5-high"></td>
+            </tr>
+            <tr>
+               <td id="city1-day1-low"></td>
+               <td id="city1-day2-low"></td>
+               <td id="city1-day3-low"></td>
+               <td id="city1-day4-low"></td>
+               <td id="city1-day5-low"></td>
+            </tr>
+            <tr>
+               <td><img id="city1-day1-image"></td>
+               <td><img id="city1-day2-image"></td>
+               <td><img id="city1-day3-image"></td>
+               <td><img id="city1-day4-image"></td>
+               <td><img id="city1-day5-image"></td>
+            </tr>
+             <!--FAKE TABLE FOR SPACE-->
+             <table style="display: inline-block">
+             <tr>
+                <th></th>
+                 <th></th>
+                 <th></th>
+                 <th></th><th></th>
+                 <th></th><th></th>
+                 <th></th><th></th>
+                 <th></th><th></th>
+                 <th></th>
+            </tr>
+
+             </table> <!--END FAKE TABLE-->
+         </table>
+
+         <p id="loading-city2">Loading...</p>
+         <p id="error-loading-city2" class="error-msg"></p>
+
+         <table id="results-city2" style="display: inline-block ">
+             <tr >
+                 <td colspan="5" id="city2-name" class="tableName"></td>
+             </tr>
+
+            <tr>
+               <td id="city2-day1-name"></td>
+               <td id="city2-day2-name"></td>
+               <td id="city2-day3-name"></td>
+               <td id="city2-day4-name"></td>
+               <td id="city2-day5-name"></td>
+            </tr>
+            <tr>
+               <td id="city2-day1-high"></td>
+               <td id="city2-day2-high"></td>
+               <td id="city2-day3-high"></td>
+               <td id="city2-day4-high"></td>
+               <td id="city2-day5-high"></td>
+            </tr>
+            <tr>
+               <td id="city2-day1-low"></td>
+               <td id="city2-day2-low"></td>
+               <td id="city2-day3-low"></td>
+               <td id="city2-day4-low"></td>
+               <td id="city2-day5-low"></td>
+            </tr>
+            <tr>
+               <td><img id="city2-day1-image"></td>
+               <td><img id="city2-day2-image"></td>
+               <td><img id="city2-day3-image"></td>
+               <td><img id="city2-day4-image"></td>
+               <td><img id="city2-day5-image"></td>
+            </tr>
+         </table>
+      </section>
+
+        </div>
+
+
+
+        </main>
+
+
+         <!-- FOOTER -->
+      <footer  id="footer">
+
+            <p>&copy;Zain's Website 2020 - theme by <a href="https://getbootstrap.com/docs/4.4/examples/carousel/">Bootstrap</a>  </p>
+          </footer>
+               <!--java script-->
+
+       <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+      crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/weather.js"></script>
+
+    </body>
+</html>

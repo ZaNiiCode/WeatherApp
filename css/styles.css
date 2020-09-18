@@ -1,0 +1,32 @@
+body {
+   font-family: Helvetica, sans-serif;
+   color: #555;
+   background-color: #cff1ff;
+}
+
+#weather-input div {
+   padding-bottom: 8px;
+}
+
+.hidden {
+   display: none;
+}
+
+.error-msg {
+   color: red;
+}
+
+table {
+   margin-bottom: 15px;
+}
+
+.tableName{
+   font-weight: bold;
+
+
+};
+
+table td {
+   text-align: center;
+   padding: 3px 8px;
+}
